@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.dynatrace.tools.android:gradle-plugin:8.+'
     }
 }
 
@@ -16,6 +17,19 @@ allprojects {
         google()
         jcenter()
     }
+}
+
+apply plugin: 'com.dynatrace.instrumentation'
+dynatrace {
+	configurations {
+		sampleConfig {
+			autoStart {
+				applicationId '70370d93-43ba-4387-8fe0-7c5769cbf25a'
+				beaconUrl 'https://bf92392kjc.bf.dynatrace.com/mbeacon'
+			}
+			userOptIn true
+		}
+	}
 }
 
 rootProject.buildDir = '../build'

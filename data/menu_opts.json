@@ -19,7 +19,7 @@
         {
             "ruta" : "animatedContainer",
             "icon" : "donut_large",
-            "texto": "Animated Container"
+            "texto": "Contenedor Animado"
         },
         {
             "ruta" : "inputs",

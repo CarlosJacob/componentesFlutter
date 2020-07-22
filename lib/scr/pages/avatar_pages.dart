@@ -11,14 +11,14 @@ class AvatarPage extends StatelessWidget {
               padding: EdgeInsets.all(6.0),
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    'https://dfjc3etzov2zz.cloudfront.net/wp-content/uploads/2018/04/Mark-Zuckerberg-Forbes.jpg'),
+                    'https://avatars1.githubusercontent.com/u/37249495?s=460&u=ea6054ef8c1dedfc6ec95f56a316c5177ebb97aa&v=4'),
                 radius: 23.0,
               ),
             ),
             Container(
               margin: EdgeInsets.only(right: 10.0),
               child: CircleAvatar(
-                child: Text("SL"),
+                child: Text("CJ"),
                 backgroundColor: Colors.brown,
               ),
             )
@@ -28,7 +28,7 @@ class AvatarPage extends StatelessWidget {
           child: FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'),
             image: NetworkImage(
-                'https://www.incimages.com/uploaded_files/image/1920x1080/getty_490038758_239886.jpg'),
+                'http://mainsoft.cl/noticias/kickoff-chile-2020-int01.jpg'),
             fadeInDuration: Duration(milliseconds: 200),
           ),
         ));
