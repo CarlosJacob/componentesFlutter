@@ -27,7 +27,11 @@ dynatrace {
 				applicationId '70370d93-43ba-4387-8fe0-7c5769cbf25a'
 				beaconUrl 'https://bf92392kjc.bf.dynatrace.com/mbeacon'
 			}
-			userOptIn true
+            debug{
+                agentLogging false
+                certificateValidation false
+            }
+			userOptIn false
 		}
 	}
 }

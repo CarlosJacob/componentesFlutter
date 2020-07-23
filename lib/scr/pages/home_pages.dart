@@ -1,7 +1,8 @@
 import 'package:componentes/scr/providers/menu_provider.dart';
 import 'package:componentes/scr/utils/icono_string_util.dart';
+import 'package:flutter_dynatrace/flutter_dynatrace.dart';
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
-
 import 'alert_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,8 +22,9 @@ class HomePage extends StatelessWidget {
       future: menuProvider.cargaData(),
       initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
-        print('builder');
-        print(snapshot.data);
+        // print('builder');
+        // print(snapshot.data);
+        Dynatrace.identifyUser('Carlos Jacob');
         return ListView(
           children: _listaItems(snapshot.data, context),
         );
@@ -42,11 +44,17 @@ class HomePage extends StatelessWidget {
           color: Colors.blue,
         ),
         onTap: () {
+          String _opcion = opt['texto'];
+          Dynatrace.enterAction(
+              parentAction: '0', parentActionName: "Click en $_opcion");
+          print(Dynatrace.enterAction);
           Navigator.pushNamed(context, opt['ruta']);
+          Dynatrace.leaveAction(parentAction: '0');
           // final route = MaterialPageRoute(builder: (context) => AlertPage());
           // Navigator.push(context, route);
         },
       );
+
       opciones..add(widgetTemp)..add(Divider());
     });
 
